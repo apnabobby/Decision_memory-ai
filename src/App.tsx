@@ -16,9 +16,7 @@ import { SettingsView } from './components/SettingsView';
 import { BobHubModal } from './components/BobHubModal';
 import { EvidenceModal } from './components/EvidenceModal';
 import { DemoScriptModal } from './components/DemoScriptModal';
-import { GitHubConnectModal } from './components/GitHubConnectModal';
-import { RepoAnalysisView } from './components/RepoAnalysisView';
-import { DecisionAnswer, EvidenceSource, PresetDemoQuestion, GitHubUser } from './types/decision';
+import { DecisionAnswer, EvidenceSource, PresetDemoQuestion } from './types/decision';
 import { PRESET_DECISION_ANSWERS, RAW_EVIDENCE_REPOSITORY } from './data/sampleDataset';
 import { askDecisionMemory } from './services/queryEngine';
 import { Terminal, ShieldCheck, Heart, Cpu } from 'lucide-react';
@@ -30,11 +28,6 @@ export default function App() {
   const [loadingStep, setLoadingStep] = useState<string>('');
   const [queryError, setQueryError] = useState<string | null>(null);
   const [history, setHistory] = useState<DecisionAnswer[]>([PRESET_DECISION_ANSWERS.redis]);
-  
-  // GitHub & Repository Context
-  const [currentUser, setCurrentUser] = useState<GitHubUser | null>(null);
-  const [currentRepoName, setCurrentRepoName] = useState<string>('cloudscale-infra/core-api');
-  const [isGitHubModalOpen, setIsGitHubModalOpen] = useState<boolean>(false);
 
   // Modals
   const [isBobHubOpen, setIsBobHubOpen] = useState<boolean>(false);
@@ -42,41 +35,6 @@ export default function App() {
   const [inspectedEvidence, setInspectedEvidence] = useState<EvidenceSource | null>(null);
   const [graphDecisionKey, setGraphDecisionKey] = useState<string>('redis');
 
-  // Check existing GitHub user session on mount
-  useEffect(() => {
-    const savedToken = localStorage.getItem('github_token');
-    const savedUser = localStorage.getItem('github_user');
-
-    if (savedUser) {
-      try {
-        setCurrentUser(JSON.parse(savedUser));
-      } catch {}
-    }
-
-    if (savedToken) {
-      fetch('/api/auth/github/token-login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token: savedToken }),
-      })
-        .then(res => res.json())
-        .then(data => {
-          if (data.user) {
-            setCurrentUser(data.user);
-          }
-        })
-        .catch(() => {});
-    } else {
-      fetch('/api/github/user')
-        .then(res => res.json())
-        .then(data => {
-          if (data.connected && data.user) {
-            setCurrentUser(data.user);
-          }
-        })
-        .catch(() => {});
-    }
-  }, []);
 
   const handleAsk = async (question: string, presetKey?: string) => {
     setIsLoading(true);
@@ -158,8 +116,6 @@ export default function App() {
       <Header
         onOpenBobHub={() => setIsBobHubOpen(true)}
         onOpenDemoGuide={() => setIsDemoGuideOpen(true)}
-        onOpenGitHubConnect={() => setIsGitHubModalOpen(true)}
-        currentUser={currentUser}
         activeTab={activeTab}
         onTabChange={(tab) => setActiveTab(tab as TabType)}
       />
@@ -202,19 +158,6 @@ export default function App() {
         {activeTab === 'evidence' && (
           <EvidenceView
             onInspectEvidence={(ev) => setInspectedEvidence(ev)}
-          />
-        )}
-
-        {activeTab === 'analysis' && (
-          <RepoAnalysisView
-            currentRepoName={currentRepoName}
-            onSelectRepo={(repo) => setCurrentRepoName(repo)}
-            currentUser={currentUser}
-            onOpenConnectModal={() => setIsGitHubModalOpen(true)}
-            onAskQuestion={(q) => {
-              setActiveTab('ask');
-              handleAsk(q);
-            }}
           />
         )}
 
@@ -274,19 +217,6 @@ export default function App() {
       </footer>
 
       {/* Modals */}
-      <GitHubConnectModal
-        isOpen={isGitHubModalOpen}
-        onClose={() => setIsGitHubModalOpen(false)}
-        currentUser={currentUser}
-        currentRepoName={currentRepoName}
-        onUserChange={(user) => setCurrentUser(user)}
-        onSelectRepo={(repo) => setCurrentRepoName(repo)}
-        onNavigateToAnalysis={(repo) => {
-          setCurrentRepoName(repo);
-          setActiveTab('analysis');
-        }}
-      />
-
       <BobHubModal
         isOpen={isBobHubOpen}
         onClose={() => setIsBobHubOpen(false)}

@@ -6,11 +6,10 @@ import {
   FileText, 
   Layers, 
   Clock, 
-  Settings as SettingsIcon,
-  Cpu
+  Settings as SettingsIcon 
 } from 'lucide-react';
 
-export type TabType = 'dashboard' | 'ask' | 'graph' | 'evidence' | 'sources' | 'analysis' | 'history' | 'settings';
+export type TabType = 'dashboard' | 'ask' | 'graph' | 'evidence' | 'sources' | 'history' | 'settings';
 
 interface NavigationProps {
   activeTab: TabType;
@@ -23,11 +22,11 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }
     { id: 'ask' as TabType, label: 'Ask WHY', icon: HelpCircle, highlight: true },
     { id: 'graph' as TabType, label: 'Decision Graph', icon: GitFork },
     { id: 'evidence' as TabType, label: 'Evidence', icon: FileText },
-    { id: 'analysis' as TabType, label: 'Repo Analysis & ADRs', icon: Cpu },
     { id: 'sources' as TabType, label: 'Project Sources', icon: Layers },
     { id: 'history' as TabType, label: 'History', icon: Clock },
     { id: 'settings' as TabType, label: 'Settings & About', icon: SettingsIcon },
   ];
+
 
 
   return (

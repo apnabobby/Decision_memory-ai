@@ -84,7 +84,6 @@ Cited Answer
 - **Source citations** (zero-hallucination guarantee for PRs, commits, issues, and ADRs)
 - **Alternatives and rejected options** with documented reasons for elimination
 - **Timeline of decisions** showing how architectural choices evolved over time
-- **GitHub repository connector & login system** to read commits, edit ADRs, and run repository analysis
 - **Demo / sample project data** for instant offline judging
 - **Insufficient-evidence handling** when questions lack primary documentation
 
@@ -142,18 +141,16 @@ These artifacts document the actual Bob IDE sessions used during development and
 decision-memory-ai/
 ├── src/
 │   ├── components/
-│   │   ├── Header.tsx                # App header with GitHub & Bob Hub badges
+│   │   ├── Header.tsx                # App header with IBM Bob Hub badge
 │   │   ├── Navigation.tsx            # Main tab navigation
 │   │   ├── DashboardView.tsx         # Metric overview & recent decisions
 │   │   ├── AskWhyView.tsx            # Main Ask WHY query engine & cited answer
 │   │   ├── DecisionGraphView.tsx     # Interactive SVG topological decision graph
 │   │   ├── EvidenceView.tsx          # Searchable primary evidence explorer
-│   │   ├── RepoAnalysisView.tsx      # GitHub repository reader, ADR editor & analyzer
 │   │   ├── ProjectSourcesView.tsx    # Connected repository sources dashboard
 │   │   ├── HistoryView.tsx           # Session audit log & export (.md / .json)
 │   │   ├── SettingsView.tsx          # Health check, citation policy & credits
 │   │   ├── BobHubModal.tsx           # IBM Bob 2.0 development showcase modal
-│   │   ├── GitHubConnectModal.tsx    # GitHub OAuth & PAT connection modal
 │   │   ├── EvidenceModal.tsx         # Full-document inspector & markdown export
 │   │   └── DemoScriptModal.tsx       # 2-minute hackathon judge walkthrough script
 │   ├── data/
@@ -168,7 +165,7 @@ decision-memory-ai/
 ├── data/
 │   └── knowledge_base.json           # Raw structured JSON knowledge base
 ├── bob_sessions/                     # Authentic IBM Bob 2.0 development session logs
-├── server.ts                         # Express API backend & GitHub OAuth server
+├── server.ts                         # Express API backend & Grounded Query engine
 ├── package.json                      # Dependencies and scripts
 ├── .env.example                      # Environment variables template
 ├── .gitignore                        # Git ignore rules

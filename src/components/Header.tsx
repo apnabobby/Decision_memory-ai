@@ -1,12 +1,9 @@
 import React from 'react';
-import { Sparkles, Terminal, ShieldCheck, Database, Cpu, Github } from 'lucide-react';
-import { GitHubUser } from '../types/decision';
+import { Sparkles, Terminal, ShieldCheck, Database, Cpu } from 'lucide-react';
 
 interface HeaderProps {
   onOpenBobHub: () => void;
   onOpenDemoGuide: () => void;
-  onOpenGitHubConnect: () => void;
-  currentUser: GitHubUser | null;
   activeTab: string;
   onTabChange: (tab: string) => void;
 }
@@ -14,8 +11,6 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   onOpenBobHub,
   onOpenDemoGuide,
-  onOpenGitHubConnect,
-  currentUser,
   activeTab,
   onTabChange,
 }) => {
@@ -32,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="flex items-center gap-2">
                 <span className="font-extrabold text-lg text-white tracking-tight">Decision Memory AI</span>
                 <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                  {currentUser ? 'LIVE GITHUB' : 'DEMO MODE'}
+                  DEMO MODE
                 </span>
               </div>
               <p className="text-xs text-slate-400 hidden sm:block">
@@ -43,27 +38,6 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Hackathon Badge & Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* GitHub Connection Status Button */}
-            <button
-              onClick={onOpenGitHubConnect}
-              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition ${
-                currentUser
-                  ? 'bg-slate-900 border-emerald-500/40 text-emerald-300 hover:bg-slate-800'
-                  : 'bg-slate-900 hover:bg-slate-800 text-slate-300 border-slate-700'
-              }`}
-              title="Connect GitHub Repositories"
-            >
-              <Github className="w-3.5 h-3.5" />
-              {currentUser ? (
-                <div className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  <span className="font-mono max-w-[100px] truncate">@{currentUser.login}</span>
-                </div>
-              ) : (
-                <span>Connect GitHub</span>
-              )}
-            </button>
-
             {/* Hackathon Sponsor Badge */}
             <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-slate-300">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -95,4 +69,5 @@ export const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
+
 
