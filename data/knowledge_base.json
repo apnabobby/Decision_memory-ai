@@ -1,0 +1,71 @@
+{
+  "repository": {
+    "name": "cloudscale-infra/core-api",
+    "branch": "main",
+    "lastSynced": "2026-09-24T18:40:00Z",
+    "status": "Demo Data",
+    "stats": {
+      "gitCommitsCount": 1420,
+      "pullRequestsCount": 388,
+      "issuesCount": 512,
+      "architectureDocsCount": 24
+    }
+  },
+  "sources": [
+    {
+      "id": "ADR-004",
+      "type": "architecture_doc",
+      "title": "ADR-004: Distributed Cache Layer Evaluation (Redis vs Memcached)",
+      "author": "Elena Rostova (Principal Architect)",
+      "date": "2025-06-15",
+      "status": "Accepted",
+      "decision": "Adopt Redis Cluster",
+      "reason": "Redis provides sub-2ms p99 response times under 25k req/sec, rich native data structures for tagging, RDB/AOF persistence against cold-start thundering herds, and Pub/Sub invalidation.",
+      "rejected": "Memcached rejected due to lack of persistence snapshots and missing pub/sub cache invalidation channels."
+    },
+    {
+      "id": "ADR-002",
+      "type": "architecture_doc",
+      "title": "ADR-002: Primary Store Selection (PostgreSQL vs MongoDB)",
+      "author": "Elena Rostova (Principal Architect)",
+      "date": "2025-03-05",
+      "status": "Accepted",
+      "decision": "Adopt PostgreSQL 16 on Aurora RDS",
+      "reason": "Strict ACID guarantees and declarative foreign key cascades needed for multi-tenant billing ledger integrity and SOC2 audit compliance.",
+      "rejected": "MongoDB rejected due to weak distributed cross-collection transactional guarantees and absence of referential constraint enforcement."
+    },
+    {
+      "id": "ADR-007",
+      "type": "architecture_doc",
+      "title": "ADR-007: Authentication Strategy (Stateless JWT vs Redis Session Store)",
+      "author": "David Patel (Security Lead)",
+      "date": "2025-09-02",
+      "status": "Accepted",
+      "decision": "Adopt Opaque Session Tokens in Redis",
+      "reason": "Allows instant session revocation upon logout, password reset, or privilege revocation in <2ms, satisfying enterprise SSO security criteria.",
+      "rejected": "Stateless JWT rejected because compromised tokens remain valid until expiration without maintaining a centralized revocation list anyway."
+    },
+    {
+      "id": "ADR-011",
+      "type": "architecture_doc",
+      "title": "ADR-011: Dashboard API Gateway (GraphQL Federation vs REST)",
+      "author": "Marcus Chen (Lead Backend Engineer)",
+      "date": "2025-10-22",
+      "status": "Accepted",
+      "decision": "Adopt GraphQL Aggregation Layer for Web/Mobile Clients",
+      "reason": "Consolidates 12 sequential REST roundtrips into 1 HTTP POST, slashes network payload by 68%, and drops mobile dashboard render times from 3.2s to 640ms.",
+      "rejected": "Bespoke composite REST endpoints rejected due to tight backend-frontend coupling and slow iteration cycles."
+    },
+    {
+      "id": "ADR-009",
+      "type": "architecture_doc",
+      "title": "ADR-009: Asynchronous Message Broker (RabbitMQ vs Apache Kafka)",
+      "author": "Elena Rostova (Principal Architect)",
+      "date": "2025-07-01",
+      "status": "Accepted",
+      "decision": "Adopt RabbitMQ (AMQP 0-9-1)",
+      "reason": "Native support for per-message acknowledgments, dead-letter exchanges (DLX) for retry backoffs, and priority queues at low operational overhead for 5,000 msg/sec.",
+      "rejected": "Apache Kafka rejected due to operational complexity of ZooKeeper/KRaft clusters, lack of individual message ACK/retry semantics, and overhead for discrete task queues."
+    }
+  ]
+}

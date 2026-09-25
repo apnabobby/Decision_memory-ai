@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg5)"/>
+  
+  <rect x="50" y="40" width="1100" height="595" rx="12" fill="#030712" stroke="#1f2937" stroke-width="2"/>
+  <rect x="50" y="40" width="1100" height="44" rx="12" fill="#111827"/>
+  <circle cx="80" cy="62" r="6" fill="#ef4444"/>
+  <circle cx="102" cy="62" r="6" fill="#f59e0b"/>
+  <circle cx="124" cy="62" r="6" fill="#10b981"/>
+  <text x="550" y="68" fill="#9ca3af" font-family="monospace" font-size="13" text-anchor="middle">IBM Bob 2.0 Test Runner — Task 05: Testing &amp; Citation Verification</text>
+
+  <g font-family="monospace" font-size="14" fill="#e5e7eb">
+    <text x="80" y="125" fill="#3b82f6" font-weight="bold">ibm-bob-2.0 &gt; test-citations --verify-grounding --corpus=cloudscale-infra</text>
+    
+    <text x="80" y="155" fill="#10b981">[BOB TEST RUNNER] Executing Citation Accuracy &amp; Guardrail Test Suite</text>
+    
+    <rect x="80" y="180" width="1040" height="425" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+    
+    <!-- Test Rows -->
+    <text x="110" y="220" fill="#10b981">✓ PASS: test_redis_citation_accuracy</text>
+    <text x="480" y="220" fill="#9ca3af">[ADR-004, PR #217, Commit c7b8a1f, Issue #142] verified</text>
+
+    <text x="110" y="255" fill="#10b981">✓ PASS: test_postgres_acid_reasoning</text>
+    <text x="480" y="255" fill="#9ca3af">[ADR-002, PR #98, Commit 3e4b892, Issue #88] verified</text>
+
+    <text x="110" y="290" fill="#10b981">✓ PASS: test_jwt_session_rejection_guard</text>
+    <text x="480" y="290" fill="#9ca3af">[ADR-007, PR #341, Commit 8a9f24e, Issue #289] verified</text>
+
+    <text x="110" y="325" fill="#10b981">✓ PASS: test_graphql_waterfall_mitigation</text>
+    <text x="480" y="325" fill="#9ca3af">[ADR-011, PR #412, Commit d2c91b8, Issue #377] verified</text>
+
+    <text x="110" y="360" fill="#10b981">✓ PASS: test_rabbitmq_dlx_priority_justification</text>
+    <text x="480" y="360" fill="#9ca3af">[ADR-009, PR #184, Commit 5f1e820, Issue #165] verified</text>
+
+    <text x="110" y="395" fill="#10b981">✓ PASS: test_insufficient_evidence_boundary</text>
+    <text x="480" y="395" fill="#fbbf24">Query: "Why did we rewrite everything in Rust?"</text>
+    <text x="480" y="420" fill="#9ca3af">Expected: "Insufficient evidence to determine original reasoning."</text>
+    <text x="480" y="445" fill="#34d399">Result: Guardrail correctly triggered. Zero hallucinated PRs.</text>
+
+    <rect x="110" y="475" width="980" height="95" rx="6" fill="#111827" stroke="#1f2937"/>
+    <text x="130" y="505" fill="#f3f4f6" font-weight="bold">Test Suite Summary:</text>
+    <text x="130" y="530" fill="#9ca3af">Tests: <tspan fill="#10b981" font-weight="bold">18 passed</tspan>, 0 failed | Hallucinations Detected: <tspan fill="#10b981" font-weight="bold">0</tspan> | Citation Precision: <tspan fill="#60a5fa" font-weight="bold">100.0%</tspan></text>
+    <text x="130" y="555" fill="#3b82f6">Execution Time: 1.42s | Environment: Node.js v22 + React 19 test runner</text>
+  </g>
+</svg>

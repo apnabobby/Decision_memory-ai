@@ -1,0 +1,7 @@
+{
+  "name": "Decision Memory AI",
+  "description": "Ask WHY. Get the Decision. See the Evidence. Developer knowledge assistant preserving architectural and technical decision reasoning.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
