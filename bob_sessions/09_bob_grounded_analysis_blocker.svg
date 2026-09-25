@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#121214"/>
+  <rect x="0" y="0" width="56" height="720" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <circle cx="28" cy="30" r="12" fill="#27272a"/>
+  <text x="28" y="34" fill="#a1a1aa" font-size="12" text-anchor="middle" font-family="sans-serif">⌘</text>
+  <rect x="56" y="0" width="1224" height="42" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <text x="76" y="26" fill="#f4f4f5" font-size="14" font-weight="bold" font-family="sans-serif">IBM BOB</text>
+
+  <g transform="translate(100, 60)">
+    <text x="0" y="20" fill="#f43f5e" font-size="14" font-weight="bold" font-family="sans-serif">What's blocking me</text>
+    <text x="0" y="40" fill="#d4d4d8" font-size="12.5" font-family="sans-serif">The path <tspan font-family="monospace" fill="#60a5fa">/Users/bobbyrajak/.bob/playground</tspan> does not exist yet. The clone/copy hasn't landed there.</text>
+
+    <text x="0" y="75" fill="#38bdf8" font-size="14" font-weight="bold" font-family="sans-serif">Fastest fix — run this in your terminal right now</text>
+    <rect x="0" y="88" width="750" height="110" rx="6" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
+    <text x="16" y="108" fill="#6b7280" font-size="11" font-family="monospace"># If cloning from a remote repo:</text>
+    <text x="16" y="125" fill="#ec4899" font-size="11.5" font-family="monospace">mkdir -p /Users/bobbyrajak/.bob/playground</text>
+    <text x="16" y="142" fill="#60a5fa" font-size="11.5" font-family="monospace">git clone &lt;your-repo-url&gt; /Users/bobbyrajak/.bob/playground</text>
+    <text x="16" y="165" fill="#6b7280" font-size="11" font-family="monospace"># OR if the project is already on your machine:</text>
+    <text x="16" y="182" fill="#34d399" font-size="11.5" font-family="monospace">cp -r /path/to/decision-memory-ai/* /Users/bobbyrajak/.bob/playground/</text>
+
+    <text x="0" y="230" fill="#f4f4f5" font-size="14" font-weight="bold" font-family="sans-serif">Alternative — no terminal needed</text>
+    <rect x="0" y="248" width="750" height="120" rx="6" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="15" y="270" fill="#a1a1aa" font-size="11.5" font-weight="bold" font-family="sans-serif">What to paste</text>
+    <text x="320" y="270" fill="#a1a1aa" font-size="11.5" font-weight="bold" font-family="sans-serif">What I'll get from it</text>
+    <line x1="0" y1="280" x2="750" y2="280" stroke="#27272a" stroke-width="1"/>
+    <text x="15" y="302" fill="#38bdf8" font-size="11" font-family="monospace">find . -type f from inside project</text>
+    <text x="320" y="302" fill="#d4d4d8" font-size="11" font-family="sans-serif">Full file tree → architecture</text>
+    <text x="15" y="324" fill="#38bdf8" font-size="11" font-family="monospace">package.json (root + sub-packages)</text>
+    <text x="320" y="324" fill="#d4d4d8" font-size="11" font-family="sans-serif">Dependencies, scripts, monorepo structure</text>
+    <text x="15" y="346" fill="#38bdf8" font-size="11" font-family="monospace">Contents of README.md</text>
+    <text x="320" y="346" fill="#d4d4d8" font-size="11" font-family="sans-serif">Feature overview, workflow description</text>
+
+    <text x="0" y="395" fill="#10b981" font-size="12" font-family="sans-serif">✓ Once files are readable, I'll do full analysis grounded in what exists, not assumptions.</text>
+  </g>
+
+  <rect x="100" y="550" width="1080" height="80" rx="10" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <text x="120" y="580" fill="#71717a" font-size="13" font-family="sans-serif">Follow up or start new task ⌘N</text>
+</svg>

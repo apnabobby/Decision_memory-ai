@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#121214"/>
+  <rect x="0" y="0" width="56" height="720" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <circle cx="28" cy="30" r="12" fill="#27272a"/>
+  <text x="28" y="34" fill="#a1a1aa" font-size="12" text-anchor="middle" font-family="sans-serif">⌘</text>
+  <rect x="56" y="0" width="1224" height="42" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <text x="76" y="26" fill="#f4f4f5" font-size="14" font-weight="bold" font-family="sans-serif">IBM BOB</text>
+  
+  <g transform="translate(100, 60)">
+    <text x="0" y="20" fill="#f4f4f5" font-size="14" font-weight="bold" font-family="sans-serif">Option 1 — Clone directly into the playground</text>
+    <text x="0" y="40" fill="#a1a1aa" font-size="12" font-family="sans-serif">Open your macOS terminal and run:</text>
+    <rect x="0" y="48" width="750" height="48" rx="6" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
+    <text x="16" y="68" fill="#ec4899" font-size="11.5" font-family="monospace">mkdir -p /Users/bobbyrajak/.bob/playground</text>
+    <text x="16" y="86" fill="#60a5fa" font-size="11.5" font-family="monospace">git clone &lt;your-decision-memory-repo-url&gt; /Users/bobbyrajak/.bob/playground</text>
+
+    <text x="0" y="125" fill="#f4f4f5" font-size="14" font-weight="bold" font-family="sans-serif">Option 2 — Copy a local folder into the playground</text>
+    <rect x="0" y="138" width="750" height="34" rx="6" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
+    <text x="16" y="160" fill="#60a5fa" font-size="11.5" font-family="monospace">cp -r /path/to/decision-memory-ai /Users/bobbyrajak/.bob/playground</text>
+
+    <text x="0" y="200" fill="#f4f4f5" font-size="14" font-weight="bold" font-family="sans-serif">Option 3 — Point Bob at the existing folder</text>
+    <text x="0" y="220" fill="#a1a1aa" font-size="12" font-family="sans-serif">In Bob's settings, change Workspace path to <tspan fill="#60a5fa" font-family="monospace">~/Projects/decision-memory-ai</tspan>.</text>
+
+    <text x="0" y="255" fill="#f4f4f5" font-size="14" font-weight="bold" font-family="sans-serif">Option 4 — Share repo URL or paste key files</text>
+    <text x="0" y="275" fill="#a1a1aa" font-size="12" font-family="sans-serif">Paste package.json, README.md, directory tree directly into chat.</text>
+
+    <rect x="0" y="300" width="860" height="75" rx="8" fill="#1c1917" stroke="#78350f" stroke-width="1"/>
+    <text x="18" y="322" fill="#fbbf24" font-size="12" font-weight="bold" font-family="sans-serif">👁 Failed to list files in . &gt;</text>
+    <text x="18" y="344" fill="#d6d3d1" font-size="12" font-family="sans-serif">The playground directory still doesn't exist. Bob workspace is still empty.</text>
+    <text x="18" y="364" fill="#a1a1aa" font-size="11.5" font-family="sans-serif">Where is the Decision Memory AI repository on your machine?</text>
+  </g>
+
+  <rect x="100" y="550" width="1080" height="80" rx="10" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <text x="120" y="580" fill="#71717a" font-size="13" font-family="sans-serif">Follow up or start new task ⌘N</text>
+</svg>

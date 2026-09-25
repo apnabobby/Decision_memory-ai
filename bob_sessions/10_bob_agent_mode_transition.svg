@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#121214"/>
+  <rect x="0" y="0" width="56" height="720" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <circle cx="28" cy="30" r="12" fill="#27272a"/>
+  <text x="28" y="34" fill="#a1a1aa" font-size="12" text-anchor="middle" font-family="sans-serif">⌘</text>
+  <rect x="56" y="0" width="1224" height="42" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <text x="76" y="26" fill="#f4f4f5" font-size="14" font-weight="bold" font-family="sans-serif">IBM BOB</text>
+  <rect x="1110" y="10" width="110" height="22" rx="11" fill="#1e3a5f"/>
+  <text x="1165" y="25" fill="#60a5fa" font-size="11" font-weight="bold" text-anchor="middle" font-family="monospace">11.0k / 270k | 0.325</text>
+
+  <g transform="translate(100, 55)">
+    <rect x="0" y="10" width="860" height="48" rx="8" fill="#1c1917" stroke="#78350f" stroke-width="1"/>
+    <text x="18" y="32" fill="#fbbf24" font-size="12" font-weight="bold" font-family="sans-serif">👁 Failed to list files in . &gt;</text>
+    <text x="18" y="48" fill="#d6d3d1" font-size="11" font-family="sans-serif">The workspace is still empty. Repository has never been placed in /Users/bobbyrajak/.bob/playground.</text>
+
+    <text x="0" y="85" fill="#f4f4f5" font-size="14" font-weight="bold" font-family="sans-serif">Nothing has changed — here's the definitive fix</text>
+    <text x="0" y="105" fill="#a1a1aa" font-size="12" font-family="sans-serif">Here is the exact sequence, step by step:</text>
+
+    <text x="0" y="130" fill="#e4e4e7" font-size="12" font-weight="600" font-family="sans-serif">Step 1 — Open Terminal (macOS: Cmd+Space → type "Terminal" → Enter)</text>
+    <text x="0" y="150" fill="#e4e4e7" font-size="12" font-weight="600" font-family="sans-serif">Step 2 — Run this (substitute your actual repo URL or local path):</text>
+    <rect x="0" y="160" width="750" height="65" rx="6" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
+    <text x="16" y="180" fill="#ec4899" font-size="11" font-family="monospace">mkdir -p /Users/bobbyrajak/.bob/playground</text>
+    <text x="16" y="196" fill="#60a5fa" font-size="11" font-family="monospace">git clone https://github.com/bobbyrajak05/decision-memory-ai /Users/bobbyrajak/.bob/playground</text>
+    <text x="16" y="214" fill="#34d399" font-size="11" font-family="monospace"># OR cp -r /Users/bobbyrajak/Projects/decision-memory-ai/. /Users/bobbyrajak/.bob/playground/</text>
+
+    <text x="0" y="245" fill="#e4e4e7" font-size="12" font-weight="600" font-family="sans-serif">Step 3 — Confirm it worked:</text>
+    <rect x="0" y="255" width="750" height="28" rx="6" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
+    <text x="16" y="274" fill="#facc15" font-size="11" font-family="monospace">ls /Users/bobbyrajak/.bob/playground</text>
+
+    <text x="0" y="305" fill="#e4e4e7" font-size="12" font-weight="600" font-family="sans-serif">Step 4 — Come back to Bob and re-send your request.</text>
+
+    <rect x="0" y="325" width="750" height="60" rx="8" fill="#1e1b4b" stroke="#4338ca" stroke-width="1"/>
+    <text x="16" y="348" fill="#c7d2fe" font-size="12" font-weight="bold" font-family="sans-serif">Note: I'm currently in Ask mode, which is read-only.</text>
+    <text x="16" y="370" fill="#a5b4fc" font-size="11.5" font-family="sans-serif">For implementation tasks (running builds, modifying files), switch to <tspan fill="#fff" font-weight="bold">Agent mode</tspan>.</text>
+  </g>
+
+  <rect x="100" y="550" width="1080" height="80" rx="10" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <text x="120" y="580" fill="#71717a" font-size="13" font-family="sans-serif">Follow up or start new task ⌘N</text>
+</svg>
